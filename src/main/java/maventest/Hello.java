@@ -25,7 +25,9 @@ class Hello {
     Random rng = new Random();
     Pointers.A a = Pointers.mayReturnNull(rng.nextInt());
     // FIXME: should check for null before calling method()
-    a.method();
+    if (a != null) {
+      a.method();
+    }
   }
 
   void mayLeakResource() throws IOException {

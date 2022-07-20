@@ -56,11 +56,14 @@ class Hello {
       fos = new FileOutputStream(new File("everwhat.txt"));
       fos.write(fis.read());
     } finally {
-      if (fis != null) {
-        fis.close();
-      }
-      if (fos != null) {
-        fos.close();
+      try {
+        if (fis != null) {
+          fis.close();
+        }
+      } finally {
+        if (fos != null) {
+          fos.close();
+        }
       }
     }
   }

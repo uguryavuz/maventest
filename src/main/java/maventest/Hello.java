@@ -40,6 +40,7 @@ class Hello {
       stream.write(12);
     } finally {
       // FIXME: should close the stream
+      stream.close();
     }
   }
 
